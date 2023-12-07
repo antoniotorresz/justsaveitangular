@@ -1,0 +1,13 @@
+.card {
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .card {
+        margin-top: 10px; /* Adjust the margin-top value for smaller screens */
+    }
+    .post-container{
+        display: flex;
+        flex-direction: column;
+    }
+}

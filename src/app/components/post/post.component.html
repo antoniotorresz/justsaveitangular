@@ -1,0 +1,27 @@
+<div *ngFor="let post of posts" class="post-container">
+    <div class="card">
+        <div class="card-image">
+            <figure class="image">
+                <img ngSrc="{{post.media}}" width="200" height="100" priority>
+            </figure>
+        </div>
+        <div class="card-content">
+            <div class="media">
+                <div class="media-content">
+                    <p class="title is-4">{{ post.title }}</p>
+                    <time datetime="2016-1-1">{{ post.postingDate.substring(0, 10) }}</time>
+                </div>
+            </div>
+    
+            <div class="content">
+                {{post.contentOfPost}}
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <div *ngFor="let post of posts" class="post-container">
+    {{post.title}}
+    {{post.contentOfPost}}
+    {{post.postingDate}}
+    {{post.media}}
+</div> -->
