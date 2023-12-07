@@ -24,6 +24,7 @@ openDialog(): void {
     this.isDialogOpen = true;
     const dialogRef = this.dialog.open(DialogComponent, {
       data: {},
+
       panelClass: 'dialog-container' // Add a custom CSS class for the dialog container
     });
 

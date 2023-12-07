@@ -16,10 +16,8 @@ export class PostComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    alert('arremangala puajala no');
-    this.http.get<any[]>('http://localhost:8080/api/v1/post/').subscribe((response) => {
+    this.http.get<any>('http://192.168.1.65:8080/api/v1/post/').subscribe((response) => {
       this.posts = response;
-      console.log(this.posts);
     });
   }
 

@@ -1,5 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 @import "bulma/css/bulma.css";
-
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
 @import '@fortawesome/fontawesome-free/css/all.css';
 
+.dialog-container {
+    position: fixed;
+    width: 80%;
+    border-radius: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensure the dialog is above other elements */
+  }
