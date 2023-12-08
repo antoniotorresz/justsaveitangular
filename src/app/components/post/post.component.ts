@@ -11,7 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
   styleUrl: './post.component.css'
 })
 export class PostComponent implements OnInit {
-
+  HOST: string = 'http://192.168.1.65:8080';
   posts: any[] = [];
   constructor(private http: HttpClient) { }
 

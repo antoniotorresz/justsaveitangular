@@ -1,7 +1,8 @@
 <div class="card" id="create-dialog-card">
-        <div class="card-header">
-            <h2 class="card-header-title is-centered">Create a post</h2>
-        </div>
+    <div class="card-header">
+        <h2 class="card-header-title is-centered">Create a post</h2>
+    </div>
+    <form [formGroup]="postForm">
         <div class="card-content">
             <div class="content">
                 <div class="field is-horizontal">
@@ -11,7 +12,7 @@
                     <div class="field-body">
                         <div class="field">
                             <p class="control">
-                                <input class="input is-primary" type="text" placeholder="Name your post">
+                                <input formControlName="title" class="input is-primary" type="text" placeholder="Name your post">
                             </p>
                         </div>
                     </div>
@@ -22,28 +23,36 @@
                     </div>
                     <div class="field-body">
                         <div class="field">
-                            <textarea class="textarea is-primary" placeholder="Just tell what is your post about"
+                            <textarea formControlName="body" class="textarea is-primary" placeholder="Just tell what is your post about"
                                 rows="10"></textarea>
                         </div>
                     </div>
                 </div>
-                <div class="file is-info is-centered">
+                <div class="file is-info has-name is-boxed is-centered">
                     <label class="file-label">
-                        <input class="file-input" type="file" name="media" accept="image/*">
-                        <span class="file-cta">
-                            <span class="file-icon">
-                                <i class="fas fa-upload"></i>
-                            </span>
-                            <span class="file-label">
-                                Upload a photo
-                            </span>
+                      <input formControlName="media" (change)="onFileChange($event)" class="file-input" type="file" accept="image/*" capture>
+                      <span class="file-cta">
+                        <span class="file-icon">
+                          <i class="fas fa-cloud-upload-alt"></i>
                         </span>
+                        <span class="file-label">
+                          Just upload a picture...
+                        </span>
+                      </span>
+                      <span class="file-name">
+                        {{ filename }}
+                      </span>
                     </label>
-                </div>
+                  </div>
             </div>
         </div>
         <footer class="card-footer">
-            <a class="card-footer-item" (click)="closeDialog()">Cancel</a>
-            <a href="#" class="card-footer-item">Save</a>
+            <a class="card-footer-item">
+                <button class="button is-warning footer-button" (click)="closeDialog()">Cancel</button>
+            </a>
+            <a class="card-footer-item">
+                <button type="submit" (click)="savePost()" [disabled]="postForm.invalid" [ngClass]="createButtonClass">Create</button>
+            </a>
         </footer>
-    </div>
+    </form>
+</div>

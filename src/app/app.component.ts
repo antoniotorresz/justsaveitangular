@@ -5,6 +5,7 @@ import { DialogComponent } from './components/dialog/dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { PostComponent } from './components/post/post.component';
 
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -14,6 +15,7 @@ import { PostComponent } from './components/post/post.component';
 })
 export class AppComponent implements OnInit {
   isDialogOpen = false;
+  toastr: any;
   constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
