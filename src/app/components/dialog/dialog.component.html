@@ -12,7 +12,8 @@
                     <div class="field-body">
                         <div class="field">
                             <p class="control">
-                                <input formControlName="title" class="input is-primary" type="text" placeholder="Name your post">
+                                <input formControlName="title" class="input is-primary" type="text"
+                                    placeholder="Name your post">
                             </p>
                         </div>
                     </div>
@@ -23,27 +24,28 @@
                     </div>
                     <div class="field-body">
                         <div class="field">
-                            <textarea formControlName="body" class="textarea is-primary" placeholder="Just tell what is your post about"
-                                rows="10"></textarea>
+                            <textarea formControlName="body" class="textarea is-primary"
+                                placeholder="Just tell what is your post about" rows="10"></textarea>
                         </div>
                     </div>
                 </div>
                 <div class="file is-info has-name is-boxed is-centered">
                     <label class="file-label">
-                      <input formControlName="media" (change)="onFileChange($event)" class="file-input" type="file" accept="image/*" capture>
-                      <span class="file-cta">
-                        <span class="file-icon">
-                          <i class="fas fa-cloud-upload-alt"></i>
+                        <input formControlName="media" (change)="onFileChange($event)" class="file-input" type="file"
+                            accept="image/*" capture>
+                        <span class="file-cta">
+                            <span class="file-icon">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                            </span>
+                            <span class="file-label">
+                                Just upload a picture...
+                            </span>
                         </span>
-                        <span class="file-label">
-                          Just upload a picture...
+                        <span class="file-name">
+                            {{ filename }}
                         </span>
-                      </span>
-                      <span class="file-name">
-                        {{ filename }}
-                      </span>
                     </label>
-                  </div>
+                </div>
             </div>
         </div>
         <footer class="card-footer">
@@ -51,7 +53,8 @@
                 <button class="button is-warning footer-button" (click)="closeDialog()">Cancel</button>
             </a>
             <a class="card-footer-item">
-                <button type="submit" (click)="savePost()" [disabled]="postForm.invalid" [ngClass]="createButtonClass">Create</button>
+                <button type="submit" (click)="savePost()" [disabled]="postForm.invalid"
+                    [ngClass]="createButtonClass">Create</button>
             </a>
         </footer>
     </form>

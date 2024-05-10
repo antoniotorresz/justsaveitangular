@@ -10,6 +10,9 @@
         </div>
     </section>
     <div class="search-container">
+        <!-- app.component.html -->
+        <input [(ngModel)]="searchTerm" placeholder="Search posts">
+        <app-post [searchTerm]="searchTerm"></app-post>
         <!-- <input class="input is-primary" type="text" placeholder="Look for a post"> -->
         <button (click)="openDialog()" class="button is-primary" style="width: 100%;">Create a post</button>
     </div>

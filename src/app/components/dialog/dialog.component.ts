@@ -3,7 +3,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { FormControl, FormGroup, ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { ToastrModule, ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-dialog',
@@ -20,7 +20,7 @@ export class DialogComponent implements OnInit {
   selectedFile: File | null = null;
   filepath: string = '';
   http = inject(HttpClient);
-  HOST: string = 'http://192.168.1.65:8080';
+  HOST: string = 'http://localhost:8080';
   createButtonClass: string = 'button is-success footer-button';
   SUCCESS_MESSAGE: string = '😎🤣 Post created succesfully! 🤗😇';
 
